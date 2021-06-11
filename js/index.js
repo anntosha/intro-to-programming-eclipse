@@ -34,9 +34,14 @@ messageForm[0].addEventListener('submit', (e) => {
     //Making messages
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
-    const messageLine = `<a href="mailto:${emailField}">${nameField}</a> wrote:
-    <span>${messageField} </span>`;
-    newMessage.innerHTML = messageLine;
+    const linkMessage = document.createElement('a');
+    const spanMessage = document.createElement('span');
+    linkMessage.textContent = nameField;
+    linkMessage.href = `mailto:${emailField}`;
+    spanMessage.textContent = ` ${messageField} `;
+    
+    newMessage.appendChild(linkMessage);
+    newMessage.appendChild(spanMessage);
     
     //Creating remove button
     const removeButton = document.createElement('button');
@@ -52,21 +57,35 @@ messageForm[0].addEventListener('submit', (e) => {
         }
     });
 
-    //Creating edit button
+    //Creating edit and save button in one
     const editButton = document.createElement('button');
     editButton.textContent = 'edit';
     editButton.type = 'button';
-    editButton.addEventListener('click', () => {
-        const correctInput = document.createElement('input');
-        correctInput.type = 'text';
-        correctInput.value = messageField;
-        newMessage.appendChild(correctInput);
-        editButton.textContent = 'save';
+    newMessage.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            const button = e.target;
+            if (button.textContent === 'edit') {
+                const input = document.createElement('input');
+                const span = newMessage.children[1];
+                input.type = 'text';
+                input.value = span.textContent;
+                newMessage.insertBefore(input, span);
+                newMessage.removeChild(span);
+                button.textContent = 'save';
+            } else if (button.textContent === 'save') {
+                const input = newMessage.children[1];
+                const span = document.createElement('span');
+                span.textContent = input.value;
+                newMessage.insertBefore(span, input);
+                newMessage.removeChild(input);
+                button.textContent = 'edit';
+            }
+        }
     });
-
+  
     messageList.appendChild(newMessage); 
     newMessage.appendChild(removeButton);
-    newMessage.appendChild(editButton);    
+    newMessage.appendChild(editButton);
     
     //Display message section if someone live message
     if (messageList.children.length > 0) {
