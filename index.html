@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hanna Val Title</title>
 </head>
 <body>
@@ -46,6 +46,30 @@
             </ul>        
         </section>
     </main>
+
+    <section>
+        <h2>Leave a Message</h2>
+        <form name="leave_message">
+            <label>Name
+                <input type="text" name="name" required>
+            </label><br><br>
+
+            <label>Email
+                <input type="email" name="email" required>
+            </label><br><br>
+
+            <label>Message
+                <textarea name="message" required></textarea>
+            </label><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="messages">
+        <h2>Messages</h2>
+        <ul></ul>
+    </section>
 
     <footer>
         
