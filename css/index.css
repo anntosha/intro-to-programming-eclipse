@@ -1,0 +1,379 @@
+/*General settings*/
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #000000;
+
+    background-color: #ffffff;
+}
+
+.wrapper {
+    width: 320px;
+    margin: 0 auto;
+    padding: 0;
+
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 30px 10px #dbdbdb;
+            box-shadow: 0 0 30px 10px #dbdbdb;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    margin-top: 7px;
+    width: 160px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+/*Header settings*/
+.header {
+    padding-bottom: 30px;
+    background-color: #AF7AC5;
+}
+
+.header h1 {
+    font-size: 24px;
+
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.nav {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.nav a {
+    color: #ffffff;
+}
+
+.nav a:hover,
+.nav a:focus {
+    color: #633974;
+}
+
+.menu {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu li {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.img {
+    text-align: center;
+}
+
+/*Main settings*/
+.main {
+    width: 300px;
+    margin: 0 auto;
+}
+
+/*Skills section settings*/
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills li {
+    margin: 5px;
+    padding: 5px 10px;
+    color: #AF7AC5;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #AF7AC5;
+    border-radius: 5px;
+}
+
+.skills li:hover {
+    color: #D7BDE2;
+    border-color: #D7BDE2;
+}
+
+/*Message-form section settings*/
+.message-form {
+    width: 300px;
+    margin-bottom: 50px;
+}
+
+.connect-form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+    margin: 0 auto;
+    width: 250px;
+
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #AF7AC5;
+
+    border-radius: 10px;
+}
+
+.connect-form input,
+.connect-form textarea {
+    margin: 0;
+    padding: 10px;
+    width: 230px;
+
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #000000;
+
+    border-radius: 3px;
+    border: 1px solid #9B59B6;
+}
+
+.connect-form input:focus,
+.connect-form textarea:focus {
+    background-color: #ffe88e;
+}
+
+.submit {
+    margin-top: 20px;
+    padding: 10px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #F1C40F;
+
+    border-radius: 5px;
+    border: 1px solid #9B59B6;
+}
+
+#messages li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 20px;
+
+    border-bottom: 2px solid #a79cac;
+}
+
+#messages li:last-child {
+    border-bottom: none;
+}
+
+#messages button {
+    margin: 0 10px;
+    margin-top: 10px;
+    padding: 10px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #F1C40F;
+
+    border-radius: 5px;
+    border: none;
+}
+
+#messages input {
+    padding: 10px;
+    width: 100%;
+
+    border-radius: 5px;
+}
+
+#messages span {
+    padding: 10px;
+    width: 100%;
+
+    text-align: center;
+    border-radius: 5px;
+}
+
+.remove {
+    background-color: #F1948A;
+}
+
+/*Footer settings*/
+
+.links {
+    display: flex;
+
+    padding-left: 20px;
+}
+
+.links li {
+    padding-right: 20px;
+}
+
+.links li:hover {
+    opacity: 0.5;
+}
+
+.connect {
+    padding-top: 20px;
+}
+
+.copiright {
+    color: #ffffff;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color:#AF7AC5;
+}
+
+@media (min-width: 768px) {
+    img {
+        margin-top: 7px;
+        width: 280px;
+        height: auto;
+        border-radius: 50%;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .wrapper {
+        width: 768px;
+    }
+
+    .header {
+        padding-bottom: 40px;
+    }
+
+    .header h1 {
+        padding-top: 25px;
+    }
+
+    .nav {
+        width: 720px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    
+        font-size: 1.1rem;
+    } 
+
+    .menu {
+        padding-top: 30px;
+        flex-direction: row;
+    }
+
+    .menu li {
+        padding-left: 40px;
+
+        font-size: 1rem;
+    }
+
+    .main {
+        width: 720px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+
+    .experience {
+        padding-top: 30px;
+    }
+    
+    .skills {
+        padding-top: 30px;
+    }
+
+    .skills ul {
+        justify-content: start;
+    }
+
+    .skills li {
+        margin: 5px;
+    }
+
+    .message-form {
+        width: 720px;
+    }
+
+    .connect-form {
+        width: 400px;
+    }
+
+    .connect-form input,
+    .connect-form textarea {
+        width: 378px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        width: 1200px;
+    }
+
+    .header {
+        padding-bottom: 60px;
+    }
+
+
+    .nav {
+        width: 960px;
+        padding-bottom: 30px;
+
+        font-size: 1.1rem;
+    } 
+
+    .img {
+        text-align: center;
+        background-image: url("../img/code.png");
+        background-repeat: no-repeat;
+        background-size: 50% 100%;
+    }
+
+    .main {
+        width: 960px;
+        margin: 0 auto;
+        padding-top: 60px;
+    }
+
+    .experience {
+        padding-top: 50px;
+    }
+    
+    .skills {
+        padding-top: 50px;
+    }
+
+    .message-form {
+        width: 960px;
+        padding-top: 50px;
+    }
+}
