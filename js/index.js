@@ -3,8 +3,8 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copiright = document.createElement('p');
-const skills = ["Basic JavaScript", "HTML", "CSS", "SASS", "LESS", "Git", "GItHub", "GitDesktop"];
-const skillsSection = document.getElementById('skills');
+const skills = ["Basic JavaScript", "HTML", "CSS", "SASS", "LESS", "Git", "GItHub", "VS Code", "GitHub Descktop", "BEM"];
+const skillsSection = document.querySelector('.skills');
 const skillslist = skillsSection.querySelector('ul');
 
 for (let i = 0; i < skills.length; i++) {
@@ -14,6 +14,7 @@ for (let i = 0; i < skills.length; i++) {
 };
 
 copiright.innerHTML = `Hanna Val ${thisYear}`;
+copiright.className = "copiright";
 footer.appendChild(copiright);
 
 //Message form
@@ -37,6 +38,8 @@ messageForm[0].addEventListener('submit', (e) => {
     const linkMessage = document.createElement('a');
     const spanMessage = document.createElement('span');
     linkMessage.textContent = nameField;
+    linkMessage.style.fontWeight = 'bold';
+    linkMessage.style.color = '#9B59B6';
     linkMessage.href = `mailto:${emailField}`;
     spanMessage.textContent = ` ${messageField} `;
     
@@ -46,6 +49,7 @@ messageForm[0].addEventListener('submit', (e) => {
     //Creating remove button
     const removeButton = document.createElement('button');
     removeButton.textContent = 'remove';
+    removeButton.style.backgroundColor = '#F1948A';
     removeButton.type = 'button';
     removeButton.addEventListener('click', () => {
         const entry = removeButton.parentNode.parentNode;
@@ -84,8 +88,8 @@ messageForm[0].addEventListener('submit', (e) => {
     });
   
     messageList.appendChild(newMessage); 
-    newMessage.appendChild(removeButton);
     newMessage.appendChild(editButton);
+    newMessage.appendChild(removeButton);
     
     //Display message section if someone live message
     if (messageList.children.length > 0) {
