@@ -42,6 +42,7 @@ messageForm[0].addEventListener('submit', (e) => {
     linkMessage.style.color = '#9B59B6';
     linkMessage.href = `mailto:${emailField}`;
     spanMessage.textContent = ` ${messageField} `;
+    spanMessage.className = 'spanMessage';
     
     newMessage.appendChild(linkMessage);
     newMessage.appendChild(spanMessage);
@@ -80,6 +81,7 @@ messageForm[0].addEventListener('submit', (e) => {
                 const input = newMessage.children[1];
                 const span = document.createElement('span');
                 span.textContent = input.value;
+                span.className = 'savedSpan';
                 newMessage.insertBefore(span, input);
                 newMessage.removeChild(input);
                 button.textContent = 'edit';

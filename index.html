@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="css/index.css">
     <title>Hanna Val Title</title>
 </head>
@@ -12,27 +13,47 @@
     <div class="wrapper">
         <header class="header">
             <nav class="nav">
-                <h1><a href="index.html">Hanna Val</a></h1>  
+                <h1 class="visually-hidden"><a href="index.html">Hanna Val</a></h1>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg" alt="My_logo" title="logo" width="200px" height="100px">
+                    </a>
+                </div>  
                 <ul class="menu">
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#experience">Experience</a></li>
                     <li><a href="index.html#connect">Connect</a></li>
                 </ul>
             </nav>
-            <div class="img">
-                <img src="img/hanna.jpg">
+            <div class="my_photo">
+                <img src="img/hanna.jpg" alt="My_photo" title="My_photo">
             </div>
         </header>
 
         <main class="main">
             <section class="about">
                 <h2 id="about">About</h2>
-                <p>Hi! I'm Hanna and I'm a future Software Engineer. I'm a student of software engineering bootcamp Code The Dream and I really like to code and learn something new. I'm planning to be good at the next software developing technologies: <i>HTML</i>, <i>CSS</i>, <i>JavaScript</i>, <i>React</i>, <i>SASS/LESS</i>, <i>Git'/Github</i>, <i>npm</i>.</p>
+                <p>Hi! I'm Hanna and I'm a future Software Engineer. I'm a student of software engineering bootcamp Code The Dream and I'm planning to be good at the next software developing technologies: <i>HTML</i>, <i>CSS</i>, <i>JavaScript</i>, <i>React</i>, <i>SASS/LESS</i>, <i>Git'/Github</i>, <i>npm</i>.
+                I see myself in Front End Development because I am a "visual" person. I like to see the result of my work on my own eyes. I feel interest and desire to solve the problem. I'm not afraid to learn some new technologies, because it's impresses me how they working and making development easier and faster (Flex, Grid, BEM, Libraries, frameworks). My goal is to become professional in Front End Development and making quality and beautiful sites and applications.</p>
             </section>
 
             <section class="experience">
                 <h2 id="experience">Experience</h2>
-                <p>I have already made a couple of websites using <i>HTML</i> and <i>CSS</i> - One of them is non-adaptive and the second one is adaptive. You can take a look at these websites in my Github account (see the link below).</p>
+                <div class="container">
+                    <p>I have already made a couple of websites using <i>HTML</i> and <i>CSS</i> - One of them is non-adaptive and the second one is adaptive. You can take a look at these websites in my Github account or by cliking on the pictures below:</p>
+                    <div class="card card-1">
+                        <h3>Sedona - my first project</h3>
+                        <a href="https://anntosha.github.io/895331-sedona-27/">
+                            <img src="img/sedona.png" alt="Web_site_Sedona" title="Web site Sedona" width="300px" height="300px">
+                        </a>
+                    </div>
+                    <div class="card card-2">
+                        <h3>Cat Energy Store - adaptive web site</h3>
+                        <a href="https://anntosha.github.io/cat-energy.github.io/">
+                            <img src="img/cat_energy.png" alt="Cat-energy_web_site" title="Cat-energy web site"  width="300px" height="300px">
+                        </a>
+                    </div>
+                </div>
             </section>
 
             <section class="skills">
@@ -95,6 +116,11 @@
                 </ul>        
             </section>
         </footer>
+        <div class="top">
+            <a href="index.html">
+                <img src="img/top.png" alt="Top" width="50px" height="55px">
+            </a>
+        </div>
     </div>
     <script src="js/index.js"></script>
 </body>
