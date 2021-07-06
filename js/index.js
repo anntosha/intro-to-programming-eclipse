@@ -18,11 +18,11 @@ copiright.className = "copiright";
 footer.appendChild(copiright);
 
 //Message form
-const messageForm = document.getElementsByName('leave_message');
+const messageForm = document.getElementsByName('leave_message')[0];
 const messageSection = document.getElementById('messages');
 messageSection.style.display = 'none';
 
-messageForm[0].addEventListener('submit', (e) => {
+messageForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     //Geting form values
@@ -98,6 +98,34 @@ messageForm[0].addEventListener('submit', (e) => {
         messageSection.style.display = 'block';
     }
 
-    messageForm[0].reset();
+    messageForm.reset();
 });
 
+//Fetch GitHub Repositories
+const githubRequest = new XMLHttpRequest();
+githubRequest.onreadystatechange = function () {
+    if(githubRequest.readyState === 4 && githubRequest.status === 200) { 
+  }
+}
+githubRequest.open('GET', 'https://api.github.com/users/anntosha/repos');
+githubRequest.send();
+githubRequest.addEventListener('load', function() {
+    const repositories = JSON.parse(this.response);
+    console.log(repositories);
+    const projectSection = document.getElementById('projects');
+    const projectList = projectSection.getElementsByTagName('ul')[0];
+    for (let i = 0; i < repositories.length; i++) {
+        let project = document.createElement('li');
+        let progectLink = document.createElement('a');
+        let projectDescription = document.createElement('p');
+        project.className = 'project';
+
+        progectLink.textContent = repositories[i].name;
+        projectDescription.textContent = ` Description: ${repositories[i].description}, Owner: ${repositories[i].owner.login}`;
+        progectLink.href = repositories[i].html_url;
+
+        project.appendChild(progectLink);
+        project.appendChild(projectDescription);
+        projectList.appendChild(project);
+    }
+});

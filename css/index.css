@@ -193,6 +193,23 @@ ul {
     border-color: #D7BDE2;
 }
 
+/*project section settings*/
+#projects ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.project a {
+    font-size: 1.1rem;
+    color: #a25cc0;
+}
+
+.project p {
+    margin: 0;
+    font-style: italic;
+}
+
 /*Message-form section settings*/
 .message-form {
     width: 300px;
@@ -212,6 +229,14 @@ ul {
     background-color: #C39BD3;
 
     border-radius: 10px;
+}
+
+.connect-form label {
+    margin-top: 10px;
+}
+
+.connect-form label:first-child {
+    margin-top: 0;
 }
 
 .connect-form input,
@@ -413,6 +438,14 @@ footer {
         margin: 5px;
     }
 
+    #projects {
+        padding-top: 30px;
+    }
+
+    #projects ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .message-form {
         width: 720px;
         padding-top: 30px;
@@ -465,6 +498,18 @@ footer {
     
     .skills {
         padding-top: 50px;
+    }
+
+    .skills ul {
+        justify-content: space-between;
+    }
+
+    #projects {
+        padding-top: 50px;
+    }
+
+    #projects ul {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .message-form {
