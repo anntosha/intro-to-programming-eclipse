@@ -336,6 +336,7 @@ footer {
     bottom: 5px;
     left: 75%;
     z-index: 1;
+    left: calc(50% + 105px);
 }
 
 @media (min-width: 768px) {
@@ -427,7 +428,7 @@ footer {
     }
 
     .top {
-        left: 85%;
+        left: calc(50% + 325px);
     }
 }
 
@@ -469,5 +470,9 @@ footer {
     .message-form {
         width: 960px;
         padding-top: 50px;
+    }
+
+    .top {
+        left: calc(50% + 530px);
     }
 }
