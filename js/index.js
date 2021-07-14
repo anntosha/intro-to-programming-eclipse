@@ -4,7 +4,7 @@ const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copiright = document.createElement('p');
 const skills = ["Basic JavaScript", "HTML", "CSS", "SASS", "LESS", "Git", "GItHub", "VS Code", "GitHub Descktop", "BEM"];
-const skillsSection = document.querySelector('.skills');
+const skillsSection = document.getElementById('skills');
 const skillslist = skillsSection.querySelector('ul');
 
 for (let i = 0; i < skills.length; i++) {
@@ -101,8 +101,33 @@ messageForm.addEventListener('submit', (e) => {
     messageForm.reset();
 });
 
-//Fetch GitHub Repositories
-const githubRequest = new XMLHttpRequest();
+//Fetch GitHub Repositories with Fetch API
+let repositories;
+fetch('https://api.github.com/users/anntosha/repos')
+            .then(response => response.json())
+            .then(data => {repositories = data})
+            .then(addEventListener('load', function() {
+                const projectSection = document.getElementById('projects');
+                const projectList = projectSection.getElementsByTagName('ul')[0];
+                for (let i = 0; i < repositories.length; i++) {
+                    let project = document.createElement('li');
+                    let progectLink = document.createElement('a');
+                    let projectDescription = document.createElement('p');
+                    project.className = 'project';
+            
+                    progectLink.textContent = repositories[i].name;
+                    projectDescription.textContent = ` Description: ${repositories[i].description}, Owner: ${repositories[i].owner.login}`;
+                    progectLink.href = repositories[i].html_url;
+            
+                    project.appendChild(progectLink);
+                    project.appendChild(projectDescription);
+                    projectList.appendChild(project);
+                }
+            }))
+            //.catch(error => console.log('Looks like there was a problem', error))
+
+//Fetch GitHub Repositories by XMLHttpRequest:
+/*const githubRequest = new XMLHttpRequest();
 githubRequest.onreadystatechange = function () {
     if(githubRequest.readyState === 4 && githubRequest.status === 200) { 
   }
@@ -110,6 +135,7 @@ githubRequest.onreadystatechange = function () {
 githubRequest.open('GET', 'https://api.github.com/users/anntosha/repos');
 githubRequest.send();
 githubRequest.addEventListener('load', function() {
+    console.log(this.response);
     const repositories = JSON.parse(this.response);
     console.log(repositories);
     const projectSection = document.getElementById('projects');
@@ -129,3 +155,5 @@ githubRequest.addEventListener('load', function() {
         projectList.appendChild(project);
     }
 });
+*/
+
