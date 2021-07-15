@@ -365,6 +365,17 @@ footer {
     left: calc(50% + 105px);
 }
 
+/*If Github not showing my repositories*/
+.reload {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background-color: #EC7063;
+    border-radius: 5px;
+}
+
 @media (min-width: 768px) {
     h2 {
         font-size: 1.25rem;

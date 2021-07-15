@@ -102,29 +102,38 @@ messageForm.addEventListener('submit', (e) => {
 });
 
 //Fetch GitHub Repositories with Fetch API
-let repositories;
-fetch('https://api.github.com/users/anntosha/repos')
+(function () {
+    let repositories;
+    fetch('https://api.github.com/users/anntosha/repos')
             .then(response => response.json())
             .then(data => {repositories = data})
             .then(addEventListener('load', function() {
                 const projectSection = document.getElementById('projects');
                 const projectList = projectSection.getElementsByTagName('ul')[0];
-                for (let i = 0; i < repositories.length; i++) {
-                    let project = document.createElement('li');
-                    let progectLink = document.createElement('a');
-                    let projectDescription = document.createElement('p');
-                    project.className = 'project';
-            
-                    progectLink.textContent = repositories[i].name;
-                    projectDescription.textContent = ` Description: ${repositories[i].description}, Owner: ${repositories[i].owner.login}`;
-                    progectLink.href = repositories[i].html_url;
-            
-                    project.appendChild(progectLink);
-                    project.appendChild(projectDescription);
-                    projectList.appendChild(project);
-                }
+                if (repositories == null) {
+                    const reloadMessage = document.createElement('p');
+                    reloadMessage.className = 'reload';
+                    reloadMessage.textContent = 'GitHub is not responding please reload the page';
+                    projectSection.appendChild(reloadMessage);
+                } else {
+                    for (let i = 0; i < repositories.length; i++) {
+                        let project = document.createElement('li');
+                        let progectLink = document.createElement('a');
+                        let projectDescription = document.createElement('p');
+                        project.className = 'project';
+                
+                        progectLink.textContent = repositories[i].name;
+                        projectDescription.textContent = ` Description: ${repositories[i].description}, Owner: ${repositories[i].owner.login}`;
+                        progectLink.href = repositories[i].html_url;
+                
+                        project.appendChild(progectLink);
+                        project.appendChild(projectDescription);
+                        projectList.appendChild(project);
+                    } 
+                }   
             }))
-            //.catch(error => console.log('Looks like there was a problem', error))
+            .catch(error => console.log('Looks like there was a problem', error));
+ })();
 
 //Fetch GitHub Repositories by XMLHttpRequest:
 /*const githubRequest = new XMLHttpRequest();
