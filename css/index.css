@@ -72,10 +72,11 @@ ul {
 
 .menu {
     padding-left: 10px;
+    padding-right: 10px;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .menu li {
@@ -172,13 +173,13 @@ ul {
 }
 
 /*Skills section settings*/
-.skills ul {
+#skills ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.skills li {
+#skills li {
     margin: 5px;
     padding: 5px 10px;
     color: #AF7AC5;
@@ -188,7 +189,7 @@ ul {
     border-radius: 5px;
 }
 
-.skills li:hover {
+#skills li:hover {
     color: #D7BDE2;
     border-color: #D7BDE2;
 }
@@ -364,6 +365,17 @@ footer {
     left: calc(50% + 105px);
 }
 
+/*If Github not showing my repositories*/
+.reload {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background-color: #EC7063;
+    border-radius: 5px;
+}
+
 @media (min-width: 768px) {
     h2 {
         font-size: 1.25rem;
@@ -391,12 +403,13 @@ footer {
     } 
 
     .menu {
-        padding-top: 30px;
+        padding-top: 42px;
         flex-direction: row;
+        justify-content: space-between;
     }
 
     .menu li {
-        padding-left: 40px;
+        padding-left: 20px;
 
         font-size: 1rem;
     }
@@ -426,15 +439,15 @@ footer {
           "sedona cat";
     }
     
-    .skills {
+    #skills {
         padding-top: 30px;
     }
 
-    .skills ul {
+    #skills ul {
         justify-content: start;
     }
 
-    .skills li {
+    #skills li {
         margin: 5px;
     }
 
@@ -496,11 +509,11 @@ footer {
         padding-top: 50px;
     }
     
-    .skills {
+    #skills {
         padding-top: 50px;
     }
 
-    .skills ul {
+    #skills ul {
         justify-content: space-between;
     }
 
